@@ -64,31 +64,15 @@ public class TextNote extends Note implements java.io.Serializable{
 			
 			if (pathFolder.equals(""))
 			{
-	
-				FileWriter writer = new FileWriter(new File((this.getTitle()).replaceAll(" ", "_")+".txt"));
-				BufferedWriter bw = new BufferedWriter(writer);
+				pathFolder = ".";
+			}
+			FileWriter writer = new FileWriter(new File(pathFolder + File.separator + (this.getTitle()).replaceAll(" ", "_")+".txt"));
+			BufferedWriter bw = new BufferedWriter(writer);
 	
 			     
-				bw.write(this.content);
-		        bw.close();
-				//File file = new File(this.getTitle()+File.separator+".txt");
-			}
-			else
-			{
-				FileWriter writer = new FileWriter( new File((pathFolder).replaceAll(" ", "_")+".txt"));
-				BufferedWriter bw = new BufferedWriter(writer);
-			
-			     
-				bw.write(this.content);
-		        bw.close();
-				//File file = new File(pathFolder+File.separator+".txt");
-			}
-			
-			//FileWriter writer = new FileWriter(file);
-			//BufferedWriter bw = new BufferedWriter(writer);
-	     
-			//bw.write(this.content);
-	        //bw.close();
+			bw.write(this.content);
+		    bw.close();
+				
 		}
 		catch (Exception e) {
 			
