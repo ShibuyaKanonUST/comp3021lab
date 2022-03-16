@@ -3,7 +3,12 @@ package base;
 import java.util.Objects;
 
 
-public class Note implements Comparable<Note>{
+public class Note implements Comparable<Note>, java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	//Data member
 	private java.util.Date date;
 	private String title;
